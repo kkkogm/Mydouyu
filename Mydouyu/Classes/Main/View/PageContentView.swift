@@ -36,6 +36,7 @@ extension PageContentView{
             fatherVc.addChild(childVc)
         }
         //2.添加UICollectionView，用于在cell中存放子控制器的view
+        //2.添加UICollectionView，用于在cell中存放子控制器的view
         
         
         
