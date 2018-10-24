@@ -3,4 +3,8 @@
     2.添加子控件，》1.UIScrollView 2.设置TitleLable 3.设置顶部的线段
 //封装pageContentView 
 
+
+
+
+
 //处理pagetitleview和pagecontentView的逻辑关系
