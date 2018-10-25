@@ -15,13 +15,14 @@ private let ContentCellID = "ContentCellID"
 class PageContentView: UIView {
     
     private var childVcs : [UIViewController]
-    private var fatherVc : UIViewController
+    private weak var fatherVc : UIViewController? //添加weak变成若引用，防止强引用循环引用
     
     //lazy加载属性
-    private lazy var collectionView : UICollectionView = {
+    private lazy var collectionView : UICollectionView = {[weak self] in //弱引用优化
        //1.创建布局layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size // 页面大小，这个view有多大设置多大
+        layout.itemSize = (self?.bounds.size)! // 页面大小，这个view有多大设置多大
+//        layout.itemSize = self?.bounds.size 强引用类型，上面是优化之后，添加[weak self] in变成弱引用
         layout.minimumLineSpacing = 0 //行间距 0
         layout.minimumInteritemSpacing = 0 //
         layout.scrollDirection = .horizontal //水平滚动
@@ -32,13 +33,13 @@ class PageContentView: UIView {
         collectionView.bounces = false //超出内容滚动w区域？？？？
         
         //如果想显示内容，必须设置数据源
-        collectionView.dataSource = self as? UICollectionViewDataSource
+        collectionView.dataSource = self //前面已经将self转为弱引用，所以不用加 as? UICollectionViewDataSource
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
         return collectionView
     }()
 
     //自定义构造函数
-    init(frame: CGRect,childVcs:[UIViewController],fatherVc:UIViewController) {
+    init(frame: CGRect,childVcs:[UIViewController],fatherVc:UIViewController?) {
         self.childVcs = childVcs
         self.fatherVc = fatherVc
         super.init(frame:frame)
@@ -57,7 +58,7 @@ extension PageContentView{
     private func setupUI(){
         //1.将子控制器加到父控制器中
         for childVc in childVcs{
-            fatherVc.addChild(childVc)
+            fatherVc?.addChild(childVc)
         }
         //2.添加UICollectionView，用于在cell中存放子控制器的view
         addSubview(collectionView)
