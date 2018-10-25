@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Mydouyuyyyy
+//  Mydouyu
 //
 //  Created by o g m on 2018/10/24.
 //  Copyright © 2018 o g m. All rights reserved.
