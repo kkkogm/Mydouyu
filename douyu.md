@@ -4,7 +4,4 @@
 //封装pageContentView    
 
 
-
-
-
 //处理pagetitleview和pagecontentView的逻辑关系
