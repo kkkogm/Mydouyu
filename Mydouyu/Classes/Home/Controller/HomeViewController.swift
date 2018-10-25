@@ -14,11 +14,12 @@ private let KtitleViewH : CGFloat = 40
 class HomeViewController: UIViewController {
 
     //懒加载属性pageTitleView
-    private lazy var pageTitleView : PageTitleView = {
+    private lazy var pageTitleView : PageTitleView = {[weak self] in
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: KtitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
 //        titleView.backgroundColor = .black
+        titleView.delegate = self
         return titleView
     }()
     
@@ -29,7 +30,7 @@ class HomeViewController: UIViewController {
         let contentFram = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + KtitleViewH, width: kScreenW, height: contentH)
         //2.确定所有的子控制器
         var childVcs = [UIViewController]()
-        for _ in 0...4{
+        for _ in 0..<4{
             let vc = UIViewController()
 //            vc.view.backgroundColor = UIColor(hexString: "#ffffff")
             vc.view.backgroundColor = UIColor(CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)), CGFloat(arc4random_uniform(255)))
@@ -47,7 +48,7 @@ class HomeViewController: UIViewController {
     }
 
 }
-
+//mark-设置UI界面
 extension HomeViewController{
     private func setupUI(){
         //设置头部导航栏的左边部分，因为希望按下去有刷新的效果，所以自定义一个UIBarButtonItem
@@ -90,3 +91,11 @@ extension HomeViewController{
     
    
 }
+
+//mark-遵守PageTitleViewDelegate协议
+extension HomeViewController:PageTitleViewDelegate{
+    func pageaTitleView(titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+

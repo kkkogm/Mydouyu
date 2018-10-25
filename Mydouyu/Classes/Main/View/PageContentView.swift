@@ -90,3 +90,11 @@ extension PageContentView:UICollectionViewDataSource{
     
     
 }
+
+//mark-对外暴露的方法
+extension PageContentView{
+    func setCurrentIndex(currentIndex: Int) {
+        let offsetX = CGFloat(currentIndex ) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x:offsetX,y:0), animated: false)
+    }
+}

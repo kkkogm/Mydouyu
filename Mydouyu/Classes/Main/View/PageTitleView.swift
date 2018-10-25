@@ -7,13 +7,22 @@
 //
 
 import UIKit
+//mark-定义协议，让pageContentView做出响应,写class意思是本协议只对类有效
+protocol PageTitleViewDelegate : class {
+    func pageaTitleView(titleView : PageTitleView,selectedIndex index :Int)
+    
+}
+
+
 
 private let kscrollLineH : CGFloat = 2
 
 class PageTitleView: UIView {
 
     //mark-定义属性
+    private var currentIndex: Int = 0
     private var titles:[String]
+    weak var delegate : PageTitleViewDelegate?
     
     private lazy var Lables : [UILabel] = [UILabel]()
     //懒加载属性
@@ -88,6 +97,11 @@ extension PageTitleView{
             //4.将lable 添加到scrollView 中
             scrollView.addSubview(label)
             Lables.append(label)
+            
+            //5.给label添加监听手势
+            label.isUserInteractionEnabled = true //label默认是不能和用户交互的
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(titleLabelClick(tapGes:)))
+            label.addGestureRecognizer(tapGes)
         }
     }
     private func setupBottomMenuAndScrollLine(){
@@ -105,5 +119,29 @@ extension PageTitleView{
         scrollView.addSubview(scrollLine)
         scrollLine.frame = CGRect(x: firstLable.frame.origin.x, y:frame.height - kscrollLineH, width: firstLable.frame.width, height: kscrollLineH)
         
+    }
+}
+
+//mark-监听label的点击
+extension PageTitleView{
+    @objc private func titleLabelClick(tapGes : UITapGestureRecognizer){
+       //1.获取当前label
+        guard let currentLabel = tapGes.view as? UILabel else {return}//如果没有值，直接返回
+        //2.获取上次的label
+       let oldLabel = Lables[currentIndex]
+        //3.切换文字的颜色
+        currentLabel.textColor = .orange
+        oldLabel.textColor = .gray
+        //3.保存最新label下标值
+        currentIndex = currentLabel.tag
+        //5.滚动条的位置发生改变
+        let scrollLinePositionX = CGFloat(currentLabel.tag) * scrollLine.frame.width
+        //发生移动时候动画移动
+        UIView.animate(withDuration: 0.15, animations: {
+            self.scrollLine.frame.origin.x = scrollLinePositionX
+        })
+        
+        //6.通知代理
+        delegate?.pageaTitleView(titleView: self, selectedIndex: currentIndex)
     }
 }
