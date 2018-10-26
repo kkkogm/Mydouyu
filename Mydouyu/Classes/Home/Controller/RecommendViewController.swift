@@ -42,6 +42,8 @@ class RecommendViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {[unowned self] in
         //1.创建布局
         let layout = UICollectionViewFlowLayout()
+        
+        
         layout.itemSize = CGSize(width: kItemW, height: kItemH) //模块大小
         layout.minimumLineSpacing = 0 //上下行间距
         layout.minimumInteritemSpacing = kItemMargin //左右块的间隔
