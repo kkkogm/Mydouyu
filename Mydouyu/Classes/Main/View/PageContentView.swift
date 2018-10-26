@@ -43,6 +43,7 @@ class PageContentView: UIView {
         
         //如果想显示内容，必须设置数据源
         collectionView.dataSource = self //前面已经将self转为弱引用，所以不用加 as? UICollectionViewDataSource
+        //注册
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
         return collectionView
     }()

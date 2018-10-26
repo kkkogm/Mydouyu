@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6CE4C3B218297C3007B5681 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE4C3A218297C3007B5681 /* RecommendViewController.swift */; };
 		FE0AC5952180EE1B0037BC88 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC5942180EE1B0037BC88 /* Common.swift */; };
 		FE0AC5972181095D0037BC88 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC5962181095D0037BC88 /* PageContentView.swift */; };
 		FE0AC59921810D3E0037BC88 /* UIColor-ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC59821810D3E0037BC88 /* UIColor-ex.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6CE4C3A218297C3007B5681 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		FE0AC5942180EE1B0037BC88 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		FE0AC5962181095D0037BC88 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		FE0AC59821810D3E0037BC88 /* UIColor-ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-ex.swift"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				FEF276B62180CBD1000FB581 /* HomeViewController.swift */,
+				A6CE4C3A218297C3007B5681 /* RecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				FEF276BF2180E49C000FB581 /* PageTitleView.swift in Sources */,
 				FE0AC59B218110500037BC88 /* StringforColor-ex.swift in Sources */,
+				A6CE4C3B218297C3007B5681 /* RecommendViewController.swift in Sources */,
 				FE0AC5972181095D0037BC88 /* PageContentView.swift in Sources */,
 				FEF276A02180C97E000FB581 /* AppDelegate.swift in Sources */,
 				FEF276BB2180D99B000FB581 /* UIBarButtonItem-ex.swift in Sources */,
