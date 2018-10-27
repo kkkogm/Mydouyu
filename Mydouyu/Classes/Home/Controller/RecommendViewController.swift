@@ -50,12 +50,15 @@ class RecommendViewController: UIViewController {
         
         //2.创建UICollectionView
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self //让控制器成为他的数据源
+         collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         //注册（协议用）
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
         //注册（组头用）
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+//        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+        //xib header
+        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
     
         
         return collectionView
@@ -66,7 +69,9 @@ class RecommendViewController: UIViewController {
         //设置ui界面
         setupUI()
 //        self.view.backgroundColor = UIColor.purple
-        collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
+        
+       
+        
     }
 }
 //mark-设置UI界面
@@ -101,7 +106,7 @@ extension RecommendViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         //1.取出section的headerView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
-        headerView.backgroundColor = .green
+//        headerView.backgroundColor = .green
         return headerView
     }
     

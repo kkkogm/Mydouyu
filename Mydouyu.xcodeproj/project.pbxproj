@@ -12,6 +12,10 @@
 		FE0AC5972181095D0037BC88 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC5962181095D0037BC88 /* PageContentView.swift */; };
 		FE0AC59921810D3E0037BC88 /* UIColor-ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC59821810D3E0037BC88 /* UIColor-ex.swift */; };
 		FE0AC59B218110500037BC88 /* StringforColor-ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC59A218110500037BC88 /* StringforColor-ex.swift */; };
+		FE0AC59F218389B90037BC88 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC59D218389B90037BC88 /* CollectionHeaderView.swift */; };
+		FE0AC5A0218389B90037BC88 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0AC59E218389B90037BC88 /* CollectionHeaderView.xib */; };
+		FE0AC5A321839AA20037BC88 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC5A121839AA20037BC88 /* CollectionNormalCell.swift */; };
+		FE0AC5A421839AA20037BC88 /* CollectionNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0AC5A221839AA20037BC88 /* CollectionNormalCell.xib */; };
 		FEF276A02180C97E000FB581 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF2769F2180C97E000FB581 /* AppDelegate.swift */; };
 		FEF276A52180C97E000FB581 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF276A32180C97E000FB581 /* Main.storyboard */; };
 		FEF276A72180C981000FB581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF276A62180C981000FB581 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 		FE0AC5962181095D0037BC88 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		FE0AC59821810D3E0037BC88 /* UIColor-ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-ex.swift"; sourceTree = "<group>"; };
 		FE0AC59A218110500037BC88 /* StringforColor-ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringforColor-ex.swift"; sourceTree = "<group>"; };
+		FE0AC59D218389B90037BC88 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionHeaderView.swift; path = Mydouyu/Classes/Home/view/CollectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		FE0AC59E218389B90037BC88 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CollectionHeaderView.xib; path = Mydouyu/Classes/Home/view/CollectionHeaderView.xib; sourceTree = SOURCE_ROOT; };
+		FE0AC5A121839AA20037BC88 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
+		FE0AC5A221839AA20037BC88 /* CollectionNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionNormalCell.xib; sourceTree = "<group>"; };
 		FEF2769C2180C97E000FB581 /* Mydouyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mydouyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF2769F2180C97E000FB581 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEF276A42180C97E000FB581 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE0AC59C2183892C0037BC88 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FE0AC59D218389B90037BC88 /* CollectionHeaderView.swift */,
+				FE0AC59E218389B90037BC88 /* CollectionHeaderView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		FEF276932180C97E000FB581 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +111,7 @@
 		FEF276B42180CBAD000FB581 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FE0AC59C2183892C0037BC88 /* view */,
 				FEF276B52180CBB8000FB581 /* Controller */,
 			);
 			path = Home;
@@ -140,6 +158,8 @@
 			children = (
 				FEF276BE2180E49C000FB581 /* PageTitleView.swift */,
 				FE0AC5962181095D0037BC88 /* PageContentView.swift */,
+				FE0AC5A121839AA20037BC88 /* CollectionNormalCell.swift */,
+				FE0AC5A221839AA20037BC88 /* CollectionNormalCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,7 +224,9 @@
 			files = (
 				FEF276AA2180C981000FB581 /* LaunchScreen.storyboard in Resources */,
 				FEF276A72180C981000FB581 /* Assets.xcassets in Resources */,
+				FE0AC5A421839AA20037BC88 /* CollectionNormalCell.xib in Resources */,
 				FEF276B22180CA03000FB581 /* Resourcs in Resources */,
+				FE0AC5A0218389B90037BC88 /* CollectionHeaderView.xib in Resources */,
 				FEF276A52180C97E000FB581 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF276BF2180E49C000FB581 /* PageTitleView.swift in Sources */,
+				FE0AC59F218389B90037BC88 /* CollectionHeaderView.swift in Sources */,
 				FE0AC59B218110500037BC88 /* StringforColor-ex.swift in Sources */,
 				A6CE4C3B218297C3007B5681 /* RecommendViewController.swift in Sources */,
 				FE0AC5972181095D0037BC88 /* PageContentView.swift in Sources */,
@@ -224,6 +247,7 @@
 				FEF276BB2180D99B000FB581 /* UIBarButtonItem-ex.swift in Sources */,
 				FE0AC59921810D3E0037BC88 /* UIColor-ex.swift in Sources */,
 				FE0AC5952180EE1B0037BC88 /* Common.swift in Sources */,
+				FE0AC5A321839AA20037BC88 /* CollectionNormalCell.swift in Sources */,
 				FEF276B72180CBD1000FB581 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
