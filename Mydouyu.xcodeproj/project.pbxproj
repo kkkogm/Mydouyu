@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A6CE4C3B218297C3007B5681 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CE4C3A218297C3007B5681 /* RecommendViewController.swift */; };
+		A6E8AAB121843F4200686FDB /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8AAAF21843F4200686FDB /* CollectionPrettyCell.swift */; };
+		A6E8AAB221843F4200686FDB /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E8AAB021843F4200686FDB /* CollectionPrettyCell.xib */; };
 		FE0AC5952180EE1B0037BC88 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC5942180EE1B0037BC88 /* Common.swift */; };
 		FE0AC5972181095D0037BC88 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC5962181095D0037BC88 /* PageContentView.swift */; };
 		FE0AC59921810D3E0037BC88 /* UIColor-ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0AC59821810D3E0037BC88 /* UIColor-ex.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		A6CE4C3A218297C3007B5681 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		A6E8AAAF21843F4200686FDB /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
+		A6E8AAB021843F4200686FDB /* CollectionPrettyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionPrettyCell.xib; sourceTree = "<group>"; };
 		FE0AC5942180EE1B0037BC88 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		FE0AC5962181095D0037BC88 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		FE0AC59821810D3E0037BC88 /* UIColor-ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-ex.swift"; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				FE0AC5962181095D0037BC88 /* PageContentView.swift */,
 				FE0AC5A121839AA20037BC88 /* CollectionNormalCell.swift */,
 				FE0AC5A221839AA20037BC88 /* CollectionNormalCell.xib */,
+				A6E8AAAF21843F4200686FDB /* CollectionPrettyCell.swift */,
+				A6E8AAB021843F4200686FDB /* CollectionPrettyCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 				FEF276A72180C981000FB581 /* Assets.xcassets in Resources */,
 				FE0AC5A421839AA20037BC88 /* CollectionNormalCell.xib in Resources */,
 				FEF276B22180CA03000FB581 /* Resourcs in Resources */,
+				A6E8AAB221843F4200686FDB /* CollectionPrettyCell.xib in Resources */,
 				FE0AC5A0218389B90037BC88 /* CollectionHeaderView.xib in Resources */,
 				FEF276A52180C97E000FB581 /* Main.storyboard in Resources */,
 			);
@@ -247,6 +254,7 @@
 				FEF276BB2180D99B000FB581 /* UIBarButtonItem-ex.swift in Sources */,
 				FE0AC59921810D3E0037BC88 /* UIColor-ex.swift in Sources */,
 				FE0AC5952180EE1B0037BC88 /* Common.swift in Sources */,
+				A6E8AAB121843F4200686FDB /* CollectionPrettyCell.swift in Sources */,
 				FE0AC5A321839AA20037BC88 /* CollectionNormalCell.swift in Sources */,
 				FEF276B72180CBD1000FB581 /* HomeViewController.swift in Sources */,
 			);

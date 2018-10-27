@@ -1,17 +1,17 @@
 //
-//  CollectionNormalCell.swift
+//  CollectionPrettyCell.swift
 //  Mydouyu
 //
-//  Created by o g m on 2018/10/27.
+//  Created by xmm on 2018/10/27.
 //  Copyright © 2018 o g m. All rights reserved.
 //
 /*
- Normal xib,高度和颜值的不一样
+ 颜值 xib,高度和Normal的不一样
  */
 
 import UIKit
 
-class CollectionNormalCell: UICollectionViewCell {
+class CollectionPrettyCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

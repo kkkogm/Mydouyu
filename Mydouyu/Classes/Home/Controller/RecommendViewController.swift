@@ -28,16 +28,24 @@
  1.register注册header xib
  2。register注册 cell xib
  */
+/*
+ 1.定义两个不同的ID，逻辑判断，使用不同的cell规格，Normal和Pretty
+ 2.因为不同的cell高度不同，先设置代理再遵守代理的协议
+ 3.遵守UICollectionViewDelegateFlowLayout，因为y它继承自UICollectionViewDelegate
+ 4.实现其中的一个方法，返回CGSize
+ */
 
 
 import UIKit
 
 private let kItemMargin : CGFloat = 10 //外边距
 private let kItemW : CGFloat = (kScreenW-3*kItemMargin)/2
-private let kItemH : CGFloat = kScreenW * 3/8
+private let kNormalItemH : CGFloat = kItemW * 3/4
+private let kPrettyItemH : CGFloat = kItemW * 4/3
 private let kHeaderViewH : CGFloat = 50 //组头高度
 //ID
 private let kNormalCellID = "kNormalCellID"
+private let kPrettyViewID = "kPrettyViewID"
 private let kHeaderViewID = "kHeaderViewID"
 
 class RecommendViewController: UIViewController {
@@ -48,7 +56,7 @@ class RecommendViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         
         
-        layout.itemSize = CGSize(width: kItemW, height: kItemH) //模块大小
+        layout.itemSize = CGSize(width: kItemW, height: kNormalItemH) //模块大小
         layout.minimumLineSpacing = 0 //上下行间距
         layout.minimumInteritemSpacing = kItemMargin //左右块的间隔
         layout.headerReferenceSize = CGSize(width: kScreenW, height: kHeaderViewH)//组头
@@ -58,11 +66,14 @@ class RecommendViewController: UIViewController {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self //让控制器成为他的数据源
+        collectionView.delegate = self //设置代理，因为新的Prettycell的大小和Normal的y不一致，所以要进行判断
          collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         //注册（协议用）
         // collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
-        //xib cell
+        //xib Normalcell
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        //xib Prettycell
+        collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyViewID)
         
         //注册（组头用）
 //        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
@@ -91,8 +102,18 @@ extension RecommendViewController{
     }
 }
 //mark-遵循数据源协议
-extension RecommendViewController:UICollectionViewDataSource{
+extension RecommendViewController:UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    //===以下是delegate需要实现的重要方法===
+    //===这个方法是用来修改局部组元素和别的有差异的===
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+        if indexPath.section == 1{
+            return CGSize(width: kItemW, height: kPrettyItemH)
+        }else{
+            return CGSize(width: kItemW, height: kNormalItemH)
+        }
+    }
     
+    //===以下是datasource需要实现的方法===
     func numberOfSections (in collectionView: UICollectionView) -> Int {
         return 12 //返回12组 可以理解为定义12个板块
     }
@@ -107,7 +128,13 @@ extension RecommendViewController:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //1.获取cell dequeueReusableCell的方法必须注册cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        let cell : UICollectionViewCell!
+        if indexPath.section == 1{
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyViewID, for: indexPath)
+        }else{
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        }
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
 //        cell.backgroundColor = .red
         return cell
     }
