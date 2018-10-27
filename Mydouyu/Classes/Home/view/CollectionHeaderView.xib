@@ -29,7 +29,7 @@
                         <constraint firstAttribute="height" constant="10" id="upP-cU-iUA"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-MA-uUO">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-MA-uUO" userLabel="颜值">
                     <rect key="frame" x="33" y="29" width="37" height="2"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
@@ -61,7 +61,7 @@
                 <constraint firstItem="Eam-MA-uUO" firstAttribute="centerY" secondItem="4k6-Sv-EVd" secondAttribute="centerY" id="wM8-sU-NAg"/>
                 <constraint firstItem="Eam-MA-uUO" firstAttribute="leading" secondItem="4k6-Sv-EVd" secondAttribute="trailing" constant="5" id="xIb-d2-ZuY"/>
             </constraints>
-            <point key="canvasLocation" x="229.59999999999999" y="201.94902548725639"/>
+            <point key="canvasLocation" x="-199" y="9"/>
         </collectionReusableView>
     </objects>
     <resources>

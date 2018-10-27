@@ -24,13 +24,17 @@
  15.设置contentFram 高度加上tabar的高度
  设置collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
  */
+/*
+ 1.register注册header xib
+ 2。register注册 cell xib
+ */
 
 
 import UIKit
 
 private let kItemMargin : CGFloat = 10 //外边距
 private let kItemW : CGFloat = (kScreenW-3*kItemMargin)/2
-private let kItemH : CGFloat = kScreenW * 3/4
+private let kItemH : CGFloat = kScreenW * 3/8
 private let kHeaderViewH : CGFloat = 50 //组头高度
 //ID
 private let kNormalCellID = "kNormalCellID"
@@ -56,7 +60,10 @@ class RecommendViewController: UIViewController {
         collectionView.dataSource = self //让控制器成为他的数据源
          collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         //注册（协议用）
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
+        // collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNormalCellID)
+        //xib cell
+        collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        
         //注册（组头用）
 //        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
         //xib header
@@ -101,7 +108,7 @@ extension RecommendViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //1.获取cell dequeueReusableCell的方法必须注册cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
-        cell.backgroundColor = .red
+//        cell.backgroundColor = .red
         return cell
     }
     //与组头有关的函数
